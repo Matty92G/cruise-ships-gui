@@ -1,5 +1,4 @@
-/* globals describe it expect */
-const { Itinerary } = require("../src/Itinerary.js");
+const { Itinerary } = require("../src/itinerary.js");
 
 describe("Itinerary", () => {
   it("Can be instantiated", () => {
