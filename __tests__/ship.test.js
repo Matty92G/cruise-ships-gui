@@ -36,18 +36,21 @@ describe("Ship", () => {
     });
     it("Set Sail from port", () => {
       ship.setSail();
+
       expect(ship.currentPort).toBeFalsy();
       expect(dover.removeShip).toHaveBeenCalledWith(ship);
     });
     it("Dock at new port", () => {
       ship.setSail();
       ship.dock();
+
       expect(ship.currentPort).toBe(calais);
       expect(calais.addShip).toHaveBeenCalledWith(ship);
     });
     it("can't sail further than its itinerary", () => {
       ship.setSail();
       ship.dock();
+      
       expect(() => ship.setSail()).toThrowError("End of itinerary reached");
     });
   });

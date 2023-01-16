@@ -17,12 +17,14 @@ describe("Port", () => {
   });
   it("Can add a Ship", () => {
     port.addShip(ship);
+    
     expect(port.ships).toContain(ship);
   });
   it("Can remove a Ship", () => {
     port.addShip(titanic);
     port.addShip(queenMary);
     port.removeShip(queenMary);
+
     expect(port.ships).toEqual([titanic]);
   });
 });
