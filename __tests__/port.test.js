@@ -6,6 +6,7 @@ describe("Port", () => {
   let ship;
   let titanic;
   let queenMary;
+
   beforeEach(() => {
     port = new Port("Dover");
     ship = jest.fn();
@@ -17,7 +18,7 @@ describe("Port", () => {
   });
   it("Can add a Ship", () => {
     port.addShip(ship);
-    
+
     expect(port.ships).toContain(ship);
   });
   it("Can remove a Ship", () => {

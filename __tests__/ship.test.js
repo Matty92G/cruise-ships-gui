@@ -7,6 +7,7 @@ describe("Ship", () => {
     let dover;
     let calais;
     let itinerary;
+
     beforeEach(() => {
       dover = {
         addShip: jest.fn(),
@@ -50,7 +51,7 @@ describe("Ship", () => {
     it("can't sail further than its itinerary", () => {
       ship.setSail();
       ship.dock();
-      
+
       expect(() => ship.setSail()).toThrowError("End of itinerary reached");
     });
   });

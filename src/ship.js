@@ -1,4 +1,4 @@
-(function exportController() {
+(function exportShip() {
   class Ship {
     constructor(itinerary) {
       this.itinerary = itinerary;

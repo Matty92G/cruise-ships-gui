@@ -1,4 +1,4 @@
-(function exportController() {
+(function exportItinerary() {
   class Itinerary {
     constructor(ports) {
       this.ports = ports;
