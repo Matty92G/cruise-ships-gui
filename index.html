@@ -11,6 +11,12 @@
     <title>Cruise Ships</title>
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div id="viewport">
@@ -20,14 +26,14 @@
           data-port-name="New York City"
           data-port-index="0"
         ></div>
-        <!-- <div class="port" data-port-name="Grand Turk" data-port-index="1"></div>
+        <div class="port" data-port-name="Grand Turk" data-port-index="1"></div>
         <div class="port" data-port-name="San Juan" data-port-index="2"></div>
-        <div class="port" data-port-name="Amber Cove" data-port-index="3"></div> -->
+        <div class="port" data-port-name="Amber Cove" data-port-index="3"></div>
       </div>
       <div id="ship"></div>
+      <button id="sailbutton">Set Sail!</button>
     </div>
     <script>
-      const controller = new Controller();
       const itinerary = new Itinerary([
         new Port("New York City"),
         new Port("Grand Turk"),
@@ -35,8 +41,10 @@
         new Port("Amber Cove"),
       ]);
       const ship = new Ship(itinerary);
+      const controller = new Controller(ship);
+
       controller.renderPorts(itinerary.ports);
-      controller.renderShip(ship);
+      controller.renderShip();
     </script>
   </body>
 </html>
