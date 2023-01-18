@@ -24,6 +24,7 @@
         <div class="port" data-port-name="San Juan" data-port-index="2"></div>
         <div class="port" data-port-name="Amber Cove" data-port-index="3"></div> -->
       </div>
+      <div id="ship"></div>
     </div>
     <script>
       const controller = new Controller();
@@ -33,7 +34,9 @@
         new Port("San Juan"),
         new Port("Amber Cove"),
       ]);
+      const ship = new Ship(itinerary);
       controller.renderPorts(itinerary.ports);
+      controller.renderShip(ship);
     </script>
   </body>
 </html>
