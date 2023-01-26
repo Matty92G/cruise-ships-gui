@@ -45,6 +45,16 @@
       shipElement.style.left = `${portElement.offsetLeft - 30}px`;
     }
 
+    renderMessage(message) {
+      const viewPointSelect = document.querySelector("#viewport");
+      const newMessageElement = document.createElement("div");
+      newMessageElement.id = "message";
+      newMessageElement.innerHTML = message;
+      viewPointSelect.appendChild(newMessageElement);
+      window.setTimeout(() => {
+        viewPointSelect.removeChild(newMessageElement);
+      }, 2000);
+    }
     setSail() {
       const ship = this.ship;
       const currentPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
@@ -53,7 +63,10 @@
         `[data-port-index='${nextPortIndex}]`
       );
       if (!nextPortElement) {
-        return alert("End of the line!");
+        this.renderMessage("End of the line!");
+        return 0;
+      } else {
+        this.renderMessage("Now departing");
       }
       const shipElement = document.querySelector("#ship");
       const sailInterval = setInterval(() => {
@@ -61,11 +74,13 @@
         if (shipLeft === nextPortElement.offsetLeft - 32) {
           ship.setSail();
           ship.dock();
+          this.renderMessage("Now docked");
           clearInterval(sailInterval);
         }
         shipElement.style.left = `${shipLeft + 1}px`;
       }, 20);
     }
+
   }
 
   if (typeof module !== "undefined" && module.exports) {

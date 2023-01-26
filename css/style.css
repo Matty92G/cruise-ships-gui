@@ -46,8 +46,18 @@ body {
   width: 100%;
   font-family: 'Dancing Script', cursive;
 }
-#sailbutton:focus {
+#sailbutton:hover {
   background-color: #d8040f;
   border-bottom-width: 0;
   padding-top: 14px;
+}
+#message {
+  padding: 10px 20px;
+  font-family: 'Dancing Script', cursive;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 4px solid #0804d8;
+  background-color: green;
 }
