@@ -60,10 +60,10 @@
 
     setSail() {
       const ship = this.ship;
-      if (ship.itinerary.ports.length === 0) {
-        this.renderMessage('Hello there, No Ports Available');
-        return 0;
-      }
+      // if (ship.itinerary.ports.length === 0) {
+      //   this.renderMessage('Hello there, No Ports Available');
+      //   return 0;
+      // }
       const currentPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
       const nextPortIndex = currentPortIndex + 1;
       const nextPortElement = document.querySelector(
@@ -74,7 +74,7 @@
         return 0;
       } else {
         this.renderMessage(`Now departing ${ship.currentPort.name}`);
-        document.getElementById('sailbutton').disabled = true;
+        // document.getElementById('sailbutton').disabled = true;
       }
       const shipElement = document.querySelector('#ship');
       const sailInterval = setInterval(() => {
@@ -84,7 +84,7 @@
           ship.dock();
           this.renderMessage(`Now docked at ${ship.currentPort.name}`);
           clearInterval(sailInterval);
-          this.headUpDisplay();
+          // this.headUpDisplay();
         }
         shipElement.style.left = `${shipLeft + 1}px`;
       }, 20);
