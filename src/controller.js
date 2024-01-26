@@ -43,8 +43,8 @@
         `[data-port-index='${shipPortIndex}']`
       );
       const shipElement = document.querySelector('#ship');
-      shipElement.style.top = `${portElement.offsetTop + 20}px`;
-      shipElement.style.left = `${portElement.offsetLeft - 30}px`;
+      shipElement.style.top = `${portElement.offsetTop + 32}px`;
+      shipElement.style.left = `${portElement.offsetLeft - 32}px`;
     }
 
     renderMessage(message) {
@@ -57,6 +57,7 @@
         viewPointSelect.removeChild(newMessageElement);
       }, 2000);
     }
+
     setSail() {
       const ship = this.ship;
       if (ship.itinerary.ports.length === 0) {
