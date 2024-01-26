@@ -4,16 +4,16 @@
       this.ship = ship;
       this.initialiseSea();
 
-      document.querySelector("#sailbutton").addEventListener("click", () => {
+      document.querySelector('#sailbutton').addEventListener('click', () => {
         this.setSail();
       });
     }
 
     initialiseSea() {
-      const backgrounds = ["./images/water0.png", "./images/water1.png"];
+      const backgrounds = ['./images/water0.png', './images/water1.png'];
       let backgroundIndex = 0;
-      window.setInterval(() => {
-        document.querySelector("#viewport").style.backgroundImage = `url('${
+      setInterval(() => {
+        document.querySelector('#viewport').style.backgroundImage = `url('${
           backgrounds[backgroundIndex % backgrounds.length]
         }')`;
         backgroundIndex += 1;
@@ -21,13 +21,13 @@
     }
 
     renderPorts(ports) {
-      const portsElement = document.querySelector("#ports");
-      portsElement.style.width = "0px";
+      const portsElement = document.querySelector('#ports');
+      portsElement.style.width = '0px';
       ports.forEach((port, index) => {
-        const newPortElement = document.createElement("div");
+        const newPortElement = document.createElement('div');
         newPortElement.dataset.portName = port.Name;
         newPortElement.dataset.portIndex = index;
-        newPortElement.className = "port";
+        newPortElement.className = 'port';
 
         portsElement.appendChild(newPortElement);
 
@@ -42,15 +42,15 @@
       const portElement = document.querySelector(
         `[data-port-index='${shipPortIndex}']`
       );
-      const shipElement = document.querySelector("#ship");
+      const shipElement = document.querySelector('#ship');
       shipElement.style.top = `${portElement.offsetTop + 20}px`;
       shipElement.style.left = `${portElement.offsetLeft - 30}px`;
     }
 
     renderMessage(message) {
-      const viewPointSelect = document.querySelector("#viewport");
-      const newMessageElement = document.createElement("div");
-      newMessageElement.id = "message";
+      const viewPointSelect = document.querySelector('#viewport');
+      const newMessageElement = document.createElement('div');
+      newMessageElement.id = 'message';
       newMessageElement.innerHTML = message;
       viewPointSelect.appendChild(newMessageElement);
       window.setTimeout(() => {
@@ -60,7 +60,7 @@
     setSail() {
       const ship = this.ship;
       if (ship.itinerary.ports.length === 0) {
-        this.renderMessage("Hello there, No Ports Available");
+        this.renderMessage('Hello there, No Ports Available');
         return 0;
       }
       const currentPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
@@ -69,13 +69,13 @@
         `[data-port-index='${nextPortIndex}]`
       );
       if (!nextPortElement) {
-        this.renderMessage("End of the line!");
+        this.renderMessage('End of the line!');
         return 0;
       } else {
         this.renderMessage(`Now departing ${ship.currentPort.name}`);
-        document.getElementById("sailbutton").disabled = true;
+        document.getElementById('sailbutton').disabled = true;
       }
-      const shipElement = document.querySelector("#ship");
+      const shipElement = document.querySelector('#ship');
       const sailInterval = setInterval(() => {
         const shipLeft = parseInt(shipElement.style.left, 10);
         if (shipLeft === nextPortElement.offsetLeft - 32) {
@@ -97,12 +97,12 @@
         if (nextPortIndex < ship.itinerary.ports.length) {
           detailMessage += `<br>Next Port : ${ship.itinerary.ports[nextPortIndex].name}`;
         }
-        document.getElementById("headUpDisplay").innerHTML = detailMessage;
+        document.getElementById('headUpDisplay').innerHTML = detailMessage;
       }
     }
   }
 
-  if (typeof module !== "undefined" && module.exports) {
+  if (typeof module !== 'undefined' && module.exports) {
     module.exports = { Controller };
   } else {
     window.Controller = Controller;

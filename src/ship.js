@@ -10,7 +10,7 @@
       const itinerary = this.itinerary;
       const currentPortIndex = itinerary.ports.indexOf(this.currentPort);
       if (currentPortIndex === itinerary.ports.length - 1) {
-        throw new Error("End of itinerary reached");
+        throw new Error('End of itinerary reached');
       }
       this.previousPort = this.currentPort;
       this.currentPort = null;
@@ -23,7 +23,7 @@
       this.currentPort.addShip(this);
     }
   }
-  if (typeof module !== "undefined" && module.exports) {
+  if (typeof module !== 'undefined' && module.exports) {
     module.exports = { Ship };
   } else {
     window.Ship = Ship;
