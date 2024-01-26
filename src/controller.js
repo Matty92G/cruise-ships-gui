@@ -47,7 +47,7 @@
       shipElement.style.left = `${portElement.offsetLeft - 32}px`;
     }
 
-    renderMessage(message) {
+    renderMessage(message, time) {
       const viewPointSelect = document.querySelector('#viewport');
       const newMessageElement = document.createElement('div');
       newMessageElement.id = 'message';
@@ -55,13 +55,13 @@
       viewPointSelect.appendChild(newMessageElement);
       window.setTimeout(() => {
         viewPointSelect.removeChild(newMessageElement);
-      }, 2000);
+      }, time);
     }
 
     setSail() {
       const ship = this.ship;
       // if (ship.itinerary.ports.length === 0) {
-      //   this.renderMessage('Hello there, No Ports Available');
+      //   this.renderMessage('Hello there, No Ports Available', 1000);
       //   return 0;
       // }
       const currentPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
@@ -70,10 +70,10 @@
         `[data-port-index='${nextPortIndex}']`
       );
       if (!nextPortElement) {
-        this.renderMessage('End of the line!');
+        this.renderMessage('End of the line!', 1000);
         return 0;
       } else {
-        this.renderMessage(`Now departing ${ship.currentPort.name}`);
+        this.renderMessage(`Now departing ${ship.currentPort.name}`, 5000);
         // document.getElementById('sailbutton').disabled = true;
       }
       const shipElement = document.querySelector('#ship');
@@ -82,7 +82,7 @@
         if (shipLeft === nextPortElement.offsetLeft - 32) {
           ship.setSail();
           ship.dock();
-          this.renderMessage(`Now docked at ${ship.currentPort.name}`);
+          this.renderMessage(`Now docked at ${ship.currentPort.name}`, 2000);
           clearInterval(sailInterval);
           // this.headUpDisplay();
         }
