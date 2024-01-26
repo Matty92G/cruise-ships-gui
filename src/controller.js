@@ -67,7 +67,7 @@
       const currentPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
       const nextPortIndex = currentPortIndex + 1;
       const nextPortElement = document.querySelector(
-        `[data-port-index='${nextPortIndex}]`
+        `[data-port-index='${nextPortIndex}']`
       );
       if (!nextPortElement) {
         this.renderMessage('End of the line!');
