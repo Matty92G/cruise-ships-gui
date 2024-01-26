@@ -14,6 +14,9 @@
       if (shipIndex > -1) {
         this.ships.splice(shipIndex, 1);
       }
+      // else {
+      //   throw new Error('No ships currently at dock');
+      // }
     }
   }
 

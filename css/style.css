@@ -44,7 +44,7 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
 }
 #sailbutton:hover {
   background-color: #d8040f;
@@ -53,11 +53,20 @@ body {
 }
 #message {
   padding: 10px 20px;
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   border-bottom: 4px solid #0804d8;
   background-color: green;
+}
+#headUpDisplay {
+  color: white;
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+  text-align: right;
+  font-family: "Dancing Script", cursive;
 }
