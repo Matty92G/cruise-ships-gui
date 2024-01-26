@@ -15,7 +15,7 @@ body {
   height: 256px;
   position: relative;
   overflow-x: auto;
-  background-image: url("../images/water1.png");
+  background-image: url('../images/water1.png');
 }
 #ports {
   margin-top: 96px;
@@ -25,12 +25,12 @@ body {
 #ports > .port {
   width: 64px;
   height: 32px;
-  background-image: url("../images/port.png");
+  background-image: url('../images/port.png');
 }
 #ship {
   width: 128px;
   height: 64px;
-  background-image: url("../images/ship.png");
+  background-image: url('../images/ship.png');
   position: absolute;
 }
 #sailbutton {
@@ -38,13 +38,13 @@ body {
   background-color: #fb36b6;
   border-bottom: 4px solid #0804d8;
   color: white;
-  font-family: inherit;
   padding: 10px 20px;
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  font-family: "Dancing Script", cursive;
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
 }
 #sailbutton:hover {
   background-color: #d8040f;
@@ -52,14 +52,15 @@ body {
   padding-top: 14px;
 }
 #message {
+  background-color: green;
+  border-bottom: 4px solid #0804d8;
   padding: 10px 20px;
-  font-family: "Dancing Script", cursive;
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  border-bottom: 4px solid #0804d8;
-  background-color: green;
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
 }
 #headUpDisplay {
   color: white;
@@ -68,5 +69,5 @@ body {
   right: 16px;
   font-size: 18px;
   text-align: right;
-  font-family: "Dancing Script", cursive;
+  font-family: 'Dancing Script', cursive;
 }
