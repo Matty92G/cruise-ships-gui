@@ -73,7 +73,7 @@
         this.renderMessage('End of the line!', 1000);
         return 0;
       } else {
-        this.renderMessage(`Now departing ${ship.currentPort.name}`, 5000);
+        this.renderMessage(`Now departing ${ship.currentPort.name}`, 6000);
         // document.getElementById('sailbutton').disabled = true;
       }
       const shipElement = document.querySelector('#ship');
