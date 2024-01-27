@@ -73,8 +73,11 @@
         this.renderMessage('End of the line!', 1000);
         return 0;
       } else {
-        this.renderMessage(`Now departing ${ship.currentPort.name}`, 6000);
-        // document.getElementById('sailbutton').disabled = true;
+        this.renderMessage(
+          `Next Stop: ${ship.itinerary.ports[nextPortIndex].name}`,
+          6000
+        );
+        this.renderMessage(`Now departing ${ship.currentPort.name}`, 2000);
       }
       const shipElement = document.querySelector('#ship');
       const sailInterval = setInterval(() => {
@@ -84,7 +87,7 @@
           ship.dock();
           this.renderMessage(`Now docked at ${ship.currentPort.name}`, 2000);
           clearInterval(sailInterval);
-          // this.headUpDisplay();
+          this.headUpDisplay();
         }
         shipElement.style.left = `${shipLeft + 1}px`;
       }, 20);
