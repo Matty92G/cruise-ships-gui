@@ -60,10 +60,6 @@
 
     setSail() {
       const ship = this.ship;
-      // if (ship.itinerary.ports.length === 0) {
-      //   this.renderMessage('Hello there, No Ports Available', 1000);
-      //   return 0;
-      // }
       const currentPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
       const nextPortIndex = currentPortIndex + 1;
       const nextPortElement = document.querySelector(
@@ -104,6 +100,13 @@
         }
         document.querySelector('#headUpDisplay').innerHTML = detailMessage;
       }
+    }
+
+    addPort() {
+      const ship = this.ship;
+      const currentPortIndex = ship.itinerary.ports.indexOf(ship.lastPort);
+      let formMessage = `Last Port : ${ship.itinerary.ports[currentPortIndex].name}`;
+      document.querySelector('#formDisplay').innerHTML = formMessage;
     }
   }
 

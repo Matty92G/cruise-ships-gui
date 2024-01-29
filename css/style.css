@@ -71,3 +71,13 @@ body {
   text-align: right;
   font-family: 'Dancing Script', cursive;
 }
+
+#formDisplay {
+  color: white;
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 18px;
+  text-align: left;
+  font-family: 'Dancing Script', cursive;
+}
