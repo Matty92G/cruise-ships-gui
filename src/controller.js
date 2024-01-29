@@ -102,11 +102,36 @@
       }
     }
 
-    addPort() {
+    renderForm() {
       const ship = this.ship;
-      const currentPortIndex = ship.itinerary.ports.indexOf(ship.lastPort);
-      let formMessage = `Last Port : ${ship.itinerary.ports[currentPortIndex].name}`;
-      document.querySelector('#formDisplay').innerHTML = formMessage;
+      const lastPortIndex = ship.itinerary.ports.indexOf(ship.lastPort);
+      let formMessage = `Last Port : ${ship.itinerary.ports[lastPortIndex].name}`;
+      let formInput =
+        formMessage +
+        '<div id="addPort"><form id="addPortForm"><label for="portValue">Add Port:</label><input type="text" id="portadd" class="form-control" placeholder="Enter New Destination..."/><input type="button" id="addportbutton" value="Add Port"></input></form></div>';
+      // document.querySelector('#formDisplay').innerHTML = formMessage;
+      document.querySelector('#formDisplay').innerHTML = formInput;
+      document
+        .querySelector('#addportbutton')
+        .addEventListener('click', (e) => {
+          e.preventDefault();
+          let PortElement = document.getElementById('portadd').value;
+          console.log(PortElement);
+          this.ship.itinerary.ports.push(new Port(PortElement));
+          this.headUpDisplay();
+          const portsElement = document.querySelector('#ports');
+          const newPortElement = document.createElement('div');
+          newPortElement.dataset.portName = itinerary.ports[lastPortIndex].name;
+          newPortElement.dataset.portIndex = itinerary.ports[lastPortIndex];
+          newPortElement.className = 'port';
+
+          portsElement.appendChild(newPortElement);
+
+          const portsElementWidth = parseInt(portsElement.style.width, 10);
+          portsElement.style.width = `${portsElementWidth + 256}px`;
+          this.ship.itinerary.ports;
+          this.renderShip();
+        });
     }
   }
 

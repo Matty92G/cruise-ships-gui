@@ -40,8 +40,8 @@
       const itinerary = new Itinerary([
         new Port('New York City'),
         new Port('Grand Turk'),
-        new Port('San Juan'),
-        new Port('Amber Cove'),
+        // new Port('San Juan'),
+        // new Port('Amber Cove'),
       ]);
       const ship = new Ship(itinerary);
       const controller = new Controller(ship);
@@ -49,7 +49,7 @@
       controller.renderPorts(itinerary.ports);
       controller.renderShip();
       controller.headUpDisplay();
-      controller.addPort();
+      controller.renderForm();
     </script>
   </body>
 </html>
