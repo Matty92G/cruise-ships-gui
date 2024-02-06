@@ -36,6 +36,20 @@
       });
     }
 
+    renderNewPorts(ports) {
+      // const portsElement = document.querySelector('#ports');
+      // portsElement.style.width = '0px';
+      // ports.forEach((port, index) => {
+      //   const newPortElement = document.createElement('div');
+      //   newPortElement.dataset.portName = port.Name;
+      //   newPortElement.dataset.portIndex = index;
+      //   newPortElement.className = 'port';
+      //   portsElement.appendChild(newPortElement);
+      //   const portsElementWidth = parseInt(portsElement.style.width, 10);
+      //   portsElement.style.width = `${portsElementWidth + 256}px`;
+      // });
+    }
+
     renderShip() {
       const ship = this.ship;
       const shipPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
@@ -65,6 +79,7 @@
       const nextPortElement = document.querySelector(
         `[data-port-index='${nextPortIndex}']`
       );
+
       if (!nextPortElement) {
         this.renderMessage('End of the line!', 1000);
         return 0;
@@ -129,6 +144,16 @@
           const portsElementWidth = parseInt(portsElement.style.width, 10);
           portsElement.style.width = `${portsElementWidth + 256}px`;
           this.ship.itinerary.ports;
+          // const fullPortIndex = ship.itinerary.ports.length;
+          // const nextPortElement = document.querySelector(
+          //   `[data-port-index='${fullPortIndex}']`
+          // );
+          // document.querySelector(
+          //       `[data-port-index='[object Object]']`
+          //       ) = nextPortElement;
+
+          // this.renderNewPort();
+
           this.renderShip();
         });
     }
