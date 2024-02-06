@@ -116,7 +116,6 @@
         .addEventListener('click', (e) => {
           e.preventDefault();
           let PortElement = document.getElementById('portadd').value;
-          console.log(PortElement);
           this.ship.itinerary.ports.push(new Port(PortElement));
           this.headUpDisplay();
           const portsElement = document.querySelector('#ports');
